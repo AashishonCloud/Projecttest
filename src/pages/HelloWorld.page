@@ -11,8 +11,8 @@ hello worold
 hello {!$User.FirstName}
 </pre>
 </p>
-<hr/>
+<hr/> 
 
-<h1 style='colour:blue'> Welcome to Visualforce</h1>
+<h1 style='colour:blue'> Welcome to  Visualforce</h1>
 </body>
 </apex:page>
