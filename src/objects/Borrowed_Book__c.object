@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This has one to many relationship between Library Member and books.  Contains the data of books borrowed by the library member</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Returned_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Returned Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Book_Author__c</fullName>
+        <externalId>false</externalId>
+        <formula>Book_ID__r.Author__c</formula>
+        <label>Book Author</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Book_ID__c</fullName>
+        <description>Foreign Key from the BOOKS table (Books_ID).</description>
+        <externalId>false</externalId>
+        <label>Book ID</label>
+        <referenceTo>Book__c</referenceTo>
+        <relationshipLabel>Borrowed_Books</relationshipLabel>
+        <relationshipName>Borrowed_Books</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Borrowed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Borrowed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Member_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Member_ID__r.Member_First_Name__c</formula>
+        <label>Member First Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Member ID</label>
+        <referenceTo>Member__c</referenceTo>
+        <relationshipLabel>Borrowed_Books</relationshipLabel>
+        <relationshipName>Borrowed_Books</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Return_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Borrowed_Date__c + 15</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Return Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Returned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Returned</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Borrowed Book</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Book_Author__c</columns>
+        <columns>Member_First_Name__c</columns>
+        <columns>Book_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Borrowed Book  Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Borrowed_Books</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Borrowed_date_cannot_be_changed</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED( Borrowed_Date__c )</errorConditionFormula>
+        <errorDisplayField>Borrowed_Date__c</errorDisplayField>
+        <errorMessage>Borrowed date cannot be changed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Number_of_Borrowed_Books_exceeded</fullName>
+        <active>true</active>
+        <errorConditionFormula>Member_ID__r.No_Of_Books__c &lt; 4</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>Number of borrowed books exceeded the limit</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Valid_Return_Date</fullName>
+        <active>true</active>
+        <description>Actual Return Date can’t be less than Borrowed Date</description>
+        <errorConditionFormula>Actual_Returned_Date__c  &lt;  Borrowed_Date__c</errorConditionFormula>
+        <errorDisplayField>Actual_Returned_Date__c</errorDisplayField>
+        <errorMessage>Returned date cannot be less than the Borrowed date</errorMessage>
+    </validationRules>
+</CustomObject>

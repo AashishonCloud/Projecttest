@@ -1,0 +1,20 @@
+<apex:page standardController="account" >
+
+
+    <apex:form >
+     <apex:pageBlock >
+        <apex:pageBlockSection title="title" columns="1" collapsible="false">
+        
+         <apex:pageBlockTable value="{!account}" var="acc">
+             <apex:column value="{!acc.name}"/>
+             <apex:column value="{!acc.type}"/>
+         </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        
+    
+    <apex:pageBlockButtons location="both" >
+    <apex:commandButton value="submit" action="{!save}"/>
+    </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

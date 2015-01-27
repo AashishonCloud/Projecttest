@@ -1,0 +1,22 @@
+<apex:page standardController="Account">
+ <apex:form >
+ <apex:pageBlock title="Testing Page Block Table">
+ <apex:pageBlockSection columns="2">
+ 
+ <apex:pageblockTable value="{!account.contacts}" var="acc" align="centre" >
+
+ <apex:column value="{!acc.Name}"/>
+ <apex:column value="{!acc.Description}"/>
+ 
+ 
+ </apex:pageblockTable>
+ 
+ 
+ 
+ </apex:pageBlockSection>
+ 
+ 
+ 
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

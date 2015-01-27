@@ -1,0 +1,20 @@
+<apex:page controller="NewAccountController">
+<apex:form >
+<apex:pageBlock title="New Account">
+
+<apex:pageBlockSection columns="2">
+
+<apex:inputField value="{!accobj.Name}"/>
+<apex:inputField value="{!accobj.AccountNumber}"/>
+
+<apex:inputField value="{!accobj.Site}"/>
+<apex:inputField value="{!accobj.AccountSource}"/>
+
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+   <apex:commandButton value="save" action="{!saveaccount}"/>
+</apex:form>
+
+
+</apex:page>
